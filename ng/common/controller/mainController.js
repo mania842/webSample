@@ -11,7 +11,7 @@
     		phone: "917-504-9043",
     	};
     	
-    	$scope.data.call = "tel:+" + $scope.data.phone;
+    	$scope.data.call = "tel:" + $scope.data.phone;
     	
     	$scope.click = function() {
     	  console.log("click");
