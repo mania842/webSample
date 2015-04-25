@@ -6,23 +6,21 @@
     		function ($scope, $location) {
     			
     	console.log("MainController start");
+    	
+    	$scope.data = {
+    		phone: "917-504-9043",
+    	};
+    	
+    	$scope.data.call = "tel:+" + $scope.data.phone;
+    	
     	$scope.click = function() {
     	  console.log("click");
     	  $location.path('/test');
     	};
     	
-    	console.log("navigator.geolocation", navigator.geolocation);
-//    	if (navigator.geolocation) {
-//    		navigator.geolocation.getCurrentPosition(function(position){
-//    			$scope.$apply(function(){
-//    				console.log("position", position.coords.latitude);
-//    				console.log("position", position.coords.longitude);
-//    				$scope.position = position;
-//    			});
-//    	    });
-//    	}
-
-
+    	$scope.call = function() {
+    		window.open('tel:917-504-9043');
+    	};
 	});
     
 
