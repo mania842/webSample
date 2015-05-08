@@ -32,11 +32,7 @@
 		console.log("$location.url()", $location.url());
 		console.log("$location.absUrl()", $location.absUrl());
 		console.log("$location.path()", $location.path());
-	});
-	
-	
-	angular.module('myApp').controller('HomeController', 
-    		function ($scope, $location, page) {
+		
 		var setViewport = function(){
 			var meta = document.createElement('meta');
 			meta.name= "viewport";
@@ -45,6 +41,12 @@
 		};
 		
 		setViewport();
+	});
+	
+	
+	angular.module('myApp').controller('HomeController', 
+    		function ($scope, $location, page) {
+		
 //		console.log("$location.path()", $location.path());
 		$scope.page = page;
 	});
