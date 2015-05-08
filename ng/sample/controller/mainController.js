@@ -2,9 +2,11 @@
 {
     'use strict';
     
-    angular.module('myApp').controller('MainController', 
+    angular.module('sample').controller('MainController', 
     		function ($scope, $location) {
     			
+    	console.log("MainController start");
+    	
     	$scope.data = {
     		phone: "917-504-9043",
     	};

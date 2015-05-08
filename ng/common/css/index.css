@@ -7,6 +7,17 @@ html,body
     font-family: sans-serif;
 }
 
+body {
+  /* font: 14px/22px "Quattrocento Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  color: #666;
+  font-size: .9em; 
+  margin: 0px;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  /* background: url(images/body-background.png) #eae6d1; */
+}
+
 select:focus,
 input:focus,
 button:focus,

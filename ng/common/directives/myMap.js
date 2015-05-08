@@ -20,18 +20,12 @@
 	        // init the map
 	        var initMap = function() {
 	            if (map === void 0) {
-//	            	if ($scope.setCurrent) {
-//	    	        	mapOptions.center = new google.maps.LatLng($scope.position.latitude, $scope.position.longitude);
-//	    	        }
 	            	
 	                map = new google.maps.Map(element[0], mapOptions);
 	                setMarker(map, new google.maps.LatLng(51.508515, -0.125487), 'London', 'Just some content');
 	    	        setMarker(map, new google.maps.LatLng(52.370216, 4.895168), 'Amsterdam', 'More content');
 	    	        setMarker(map, new google.maps.LatLng(48.856614, 2.352222), 'Paris', 'Text here');
 	    	        
-//	    	        if ($scope.setCurrent) {
-//	    	        	setMarker(map, mapOptions.center, 'Yong', 'Text here', true);
-//	    	        }
 	            }
 	        };
 	        
@@ -102,10 +96,10 @@
 	    		navigator.geolocation.getCurrentPosition(function(position){
 	    			if (currentPositionMarker) return;
 	    				// Log that this is the initial position.
-	    				console.log( "Initial current position Found",  position.coords.latitude + " " + position.coords.longitude);
+//	    				console.log( "Initial current position Found",  position.coords.latitude + " " + position.coords.longitude);
 	    				// Set initial marker to the map using the position.
 	    				currentPositionMarker = setMarker(map, mapOptions.center, 'Yong', 'Text here', true);
-	    				console.log("currentPositionMarker.getPosition()", position);
+//	    				console.log("currentPositionMarker.getPosition()", position);
 	    				
 	    				var center = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 	    			    // using global variable:

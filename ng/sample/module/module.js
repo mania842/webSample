@@ -1,12 +1,12 @@
 /**
- * Common App Application module
+ * App Application module
  */
 
 (function() {
 	'use strict';
 
 	// Define our module.
-	var module = angular.module('myApp', [ 'ngRoute', 'buffetModule' ]);
+	var module = angular.module('sample', [ 'myApp' ]);
 
 	// Configure app
 	module.config(function($routeProvider) {
@@ -17,9 +17,11 @@
 
 	module.factory('page', function() {
 		var title = 'default';
+		console.log("page");
 
 		return {
 			title : function() {
+				console.log("title", title);
 				return title;
 			},
 			setTitle : function(newTitle) {
@@ -31,7 +33,7 @@
 	
 	angular.module('myApp').controller('HomeController', 
     		function ($scope, $location, page) {
-//		console.log("$location.path()", $location.path());
+		console.log("$location.path()", $location.path());
 		$scope.page = page;
 	});
 
