@@ -32,6 +32,7 @@
 		console.log("$location.url()", $location.url());
 		console.log("$location.absUrl()", $location.absUrl());
 		console.log("$location.path()", $location.path());
+		console.log("window.location.hostname", window.location.hostname);
 		
 		var setViewport = function(){
 			var meta = document.createElement('meta');
