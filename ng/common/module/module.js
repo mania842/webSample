@@ -41,7 +41,10 @@
 			console.log("meta");
 		};
 		
-		setViewport();
+		$( document ).ready(function() {
+		    setViewport();
+		});
+//		setViewport();
 	});
 	
 	
