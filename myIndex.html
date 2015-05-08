@@ -44,11 +44,7 @@
 		meta.content = "width=device-width, initial-scale=1";
 		document.getElementsByTagName('head')[0].appendChild(meta);
 	}
-	
-	$( document ).ready(function() {
-	    setViewport();
-	});
-</script>
+	</script>
 </head>
 <body>
 	<!-- Header -->
@@ -57,5 +53,10 @@
 	<div class="app-ngview" ng:view autoscroll></div>
 	<!-- Footer -->
 	<ng:include src="'ng/common/html/footer.html'"></ng:include>
+	<script>
+	$( document ).ready(function() {
+	    setViewport();
+	});
+	</script>
 </body>
 </html>
