@@ -24,6 +24,8 @@
     	$scope.call = function() {
     		window.open('tel:917-504-9043');
     	};
+    	
+//    	window.history.pushState("asdf", "title", "/gainesvillehomecooking");
 	});
     
 
