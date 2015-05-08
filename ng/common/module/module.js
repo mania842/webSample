@@ -29,30 +29,22 @@
 	});
 	
 	module.run(function($location) {
-		console.log("$location.url()", $location.url());
-		console.log("$location.absUrl()", $location.absUrl());
-		console.log("$location.path()", $location.path());
-		console.log("window.location.hostname", window.location.hostname);
-		
 		var setViewport = function(){
 			var meta = document.createElement('meta');
 			meta.name= "viewport";
 			meta.content = "width=device-width, initial-scale=1";
-			document.getElementsByTagName('head')[0].appendChild(meta);
+			window.top.document.getElementsByTagName('head')[0].appendChild(meta);
 			console.log("meta");
 		};
 		
 		$( document ).ready(function() {
 		    setViewport();
 		});
-//		setViewport();
 	});
 	
 	
 	angular.module('myApp').controller('HomeController', 
     		function ($scope, $location, page) {
-		
-//		console.log("$location.path()", $location.path());
 		$scope.page = page;
 	});
 
