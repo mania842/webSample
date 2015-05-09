@@ -30,8 +30,9 @@
 	
 	module.run(function($location) {
 		console.log("$locationpath", $location.path());
-		console.log("$location", $location.absUrl());
 		console.log("$location", $location.absUrl().indexOf("gainesvillehomecooking.com"));
+		console.log("$location", $location.absUrl());
+		
 		
 		if ($location.absUrl().indexOf("gainesvillehomecooking.com") > -1) {
 			$location.path('/buffet/menu/gainesvillehomecooking');
