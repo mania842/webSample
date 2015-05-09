@@ -31,6 +31,7 @@
 	module.run(function($location) {
 		console.log("$locationpath", $location.path());
 		console.log("$location", $location.absUrl());
+		console.log("$location", $location.url());
 	});
 	
 	
