@@ -1,5 +1,11 @@
 <div>
-  Main.html
+  <div class="weekly-menu-card-style" ng-repeat='menu in data.MENU'>
+  	<h3>{{menu.DAY}}</h3>
+	<article>
+		<span>{{menu.FOOD}}</span>
+	</article>
+  </div>
+  
   <!-- <button ng:click="click()">Click Me!</button>
   
   <h1>Contact</h1>

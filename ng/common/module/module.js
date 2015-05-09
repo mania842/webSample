@@ -28,12 +28,17 @@
 		};
 	});
 	
-	module.run(function($location) {
-		if ($location.absUrl().indexOf("gainesvillehomecooking.com") > -1) {
+	module.run(function($rootScope, $location, webId) {
+//		console.log("$location.absUrl()", $location.absUrl());
+		if ($location.absUrl().indexOf("gainesvillehomecooking") > -1) {
 			$location.path('/buffet/menu/gainesvillehomecooking');
+			webId.loadWebData("gainesvillehomecooking");
 		}
+		
+		$rootScope.admin = {
+    		web : webId.web,
+        };
 	});
-	
 	
 	angular.module('myApp').controller('HomeController', 
     		function ($scope, $location, page) {

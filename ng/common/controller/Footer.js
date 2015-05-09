@@ -21,13 +21,13 @@
        		$scope.buttonClicked(data);
     	});
        	
-       	$scope.$on('service.footer.item:updated', function(event, data, domain) {
-       		console.log("service.footer.item:updated", data);
-       		$scope.items = data;
-       		$scope.domain = domain;
+       	$scope.$on('service.webId:updated', function(event, data) {
+       		$scope.items = webId.getWebFooter();
+       		$scope.domain = webId.getWebDomain();
        	});
     	
         $scope.buttonClicked = function(item) {
+//        	console.log("item.PATH + $scope.domain", item.PATH + $scope.domain);
         	$location.path(item.PATH + $scope.domain);
 //            if(section == $scope.sections[0].name){
 ////            	if ($scope.mode.length > 0) {

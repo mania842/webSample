@@ -5,16 +5,12 @@
     angular.module('buffetModule').controller('BuffetMenuController', 
     		function ($http, $scope, $location, $routeParams, page, webId) {
     	
-    	webId.loadWebData($routeParams.homepage);
+    	$scope.data = webId.loadWebData($routeParams.homepage);
+    	$scope.$on('service.webId:updated', function(event, data, domain) {
+    		console.log("service web id updated");
+    		$scope.data = data;
+       	});
     	
-    	console.log("Buffet Menu Controller start", $location.path() + " " + $routeParams.homepage);
-//    	page.setTitle("gainesvillehomecooking");
-    	
-    	$scope.data = {
-    		phone: "917-504-9043",
-    	};
-    	
-    	$scope.data.call = "tel:" + $scope.data.phone;
     	
     	$scope.click = function() {
     	  console.log("click");

@@ -6,8 +6,21 @@
     'use strict';
 
     angular.module('myApp').controller('webHeaderController',
-	function ($scope, $window)
-	{
+    function ($scope, $window, webId, $location) {
+    	$scope.hs = webId.getWeb();
+    	$scope.webId = webId;
+    	
+    	$scope.logo = $scope.hs.DOMAIN ? "json/" + $scope.hs.DOMAIN + "/title.png" : undefined;
+    	$scope.$on('service.webId:updated', function(event, data, domain) {
+    		$scope.hs = data;
+    		$scope.webId = webId;
+    		$scope.logo = "json/" + $scope.hs.DOMAIN + "/title.png";
+       	});
+    	
+    	$scope.redirectToHome = function() {
+    		$location.path($scope.hs.HOME + $scope.hs.DOMAIN);
+    	};
+    	
     	// Load scope
 //    	$scope.vars = { newID: ""};
 //    	$scope.hs = csmdHeaderService;
