@@ -29,17 +29,8 @@
 	});
 	
 	module.run(function($location) {
-		var setViewport = function(){
-			var meta = document.createElement('meta');
-			meta.name= "viewport";
-			meta.content = "width=device-width, initial-scale=1";
-			window.top.document.getElementsByTagName('head')[0].appendChild(meta);
-			console.log("meta");
-		};
-		
-		$( document ).ready(function() {
-		    setViewport();
-		});
+		console.log("$locationpath", $location.path());
+		console.log("$location", $location.absUrl());
 	});
 	
 	
