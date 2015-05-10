@@ -4,7 +4,7 @@
     
     angular.module('buffetModule').controller('BuffetMenuController', 
     		function ($http, $scope, $location, $routeParams, page, webId) {
-    	
+    	document.ontouchmove = function(e) {e.preventDefault()};
     	$scope.data = webId.loadWebData($routeParams.homepage);
     	$scope.$on('service.webId:updated', function(event, data, domain) {
     		console.log("service web id updated");
