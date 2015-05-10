@@ -20,7 +20,7 @@
 				
 		}).when('/buffet/price/:homepage', {
 			templateUrl: 'ng/buffet/html/buffetPrice.html',
-			controller: 'BuffetMenuController'
+			controller: 'BuffetPriceController'
 		});
 //		.otherwise({ redirectTo : '/' });
 	});	

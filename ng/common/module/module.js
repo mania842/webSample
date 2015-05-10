@@ -6,7 +6,7 @@
 	'use strict';
 
 	// Define our module.
-	var module = angular.module('myApp', [ 'ngRoute', 'buffetModule' ]);
+	var module = angular.module('myApp', [ 'ngRoute', 'ngSanitize', 'buffetModule' ]);
 
 	// Configure app
 	module.config(function($routeProvider) {

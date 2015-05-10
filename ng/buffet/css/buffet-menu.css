@@ -66,3 +66,25 @@
 	margin: .5em;
 	font-size: 1.1em;
 }
+
+.price-screen {
+	text-align: center;
+}
+
+.price-table {
+	text-align: center;
+	margin-left:auto; 
+    margin-right:auto; 
+}
+.price-table td {
+	font-family: cursive;
+	font-size: 1.3em;
+	font-weight: bold;
+	padding: .5em;
+}
+.left-align {
+	text-align: left;
+}
+.right-align {
+	text-align: right;
+}
