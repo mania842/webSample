@@ -47,6 +47,11 @@
 	<div class="app-ngview" ng:view [autoscroll="true"]></div>
 	<!-- Footer -->
 	<ng:include src="'ng/common/html/footer.html'"></ng:include>
-	
+	<script>
+	// prevent scrolling via browser
+	window.addEventListener('touchmove', function(event) {
+	    event.preventDefault();
+	}, true);
+	</script>
 </body>
 </html>
