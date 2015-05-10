@@ -47,5 +47,11 @@
 	<div class="app-ngview" ng:view></div>
 	<!-- Footer -->
 	<ng:include src="'ng/common/html/footer.html'"></ng:include>
+	
+	<script>
+		document.ontouchmove = function(event){
+	    	event.preventDefault();
+		}
+	</script>
 </body>
 </html>
