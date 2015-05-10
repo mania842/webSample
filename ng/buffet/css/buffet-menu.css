@@ -8,7 +8,7 @@
 	background-color: #F7F7F7;
 	box-shadow:.3em .3em .3em gray;
 	font-size: .9em;
-	overflow: auto;
+	/* overflow: auto; */
 	margin: 1em;
 }
 .weekly-menu-card-style.table-style
