@@ -21,6 +21,12 @@
 		}).when('/buffet/price/:homepage', {
 			templateUrl: 'ng/buffet/html/buffetPrice.html',
 			controller: 'BuffetPriceController'
+				
+		}).when('/buffet/location/:homepage', {
+			redirectTo : '/location/:homepage'
+				
+		}).when('/buffet/about/:homepage', {
+			redirectTo : '/about/:homepage'
 		});
 //		.otherwise({ redirectTo : '/' });
 	});	

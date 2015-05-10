@@ -12,6 +12,13 @@
 	module.config(function($routeProvider) {
 		$routeProvider.when('/', { templateUrl : 'ng/common/html/main.html' })
 		.when('/test', { templateUrl : 'ng/common/html/test.html' })
+		.when('/location/:homepage', {
+			templateUrl: 'ng/common/html/location.html',
+			controller: 'LocationController'
+		}).when('/about/:homepage', {
+			templateUrl: 'ng/common/html/about.html',
+			controller: 'AboutController'
+		})
 		.otherwise({ redirectTo : '/' });
 	});
 
@@ -29,9 +36,13 @@
 	});
 	
 	module.run(function($rootScope, $location, webId) {
-//		console.log("$location.absUrl()", $location.absUrl());
-		if ($location.absUrl().indexOf("gainesvillehomecooking") > -1) {
+		console.log("$location.absUrl()", $location.absUrl());
+		
+		if ($location.absUrl().indexOf("gainesvillehomecooking.com") > -1) {
 			$location.path('/buffet/menu/gainesvillehomecooking');
+			webId.loadWebData("gainesvillehomecooking");
+		} else if ($location.absUrl().indexOf("gainesvillehomecooking") > -1) {
+//			$location.path('/buffet/menu/gainesvillehomecooking');
 			webId.loadWebData("gainesvillehomecooking");
 		}
 		
