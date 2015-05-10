@@ -66,7 +66,11 @@ fieldset legend
 
 #gmaps {
     width: 100%;
-    height: 30em;
+    height: 100%;
+}
+.location-map {
+	width: 50%;
+	height: 20em;
 }
 
 /******************************
@@ -78,3 +82,31 @@ fieldset legend
     padding: 0px;
     height: 100%;
  }
+ 
+ .center-screen {
+	text-align: center;
+}
+.center-screen .location-map {
+	margin: 0 auto;
+}
+
+.price-table {
+	text-align: center;
+	margin-left:auto; 
+    margin-right:auto; 
+}
+.price-table td {
+	font-family: serif;
+	font-size: 1.3em;
+	font-weight: bold;
+	padding: .5em;
+}
+.left-align {
+	text-align: left;
+}
+.right-align {
+	text-align: right;
+}
+.phone {
+	text-decoration: none;
+}

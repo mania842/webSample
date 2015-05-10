@@ -11,8 +11,8 @@
 	        
 	        // map config
 	        var mapOptions = {
-	            center: new google.maps.LatLng(50, 2),
-	            zoom: 4,
+	            center: new google.maps.LatLng($scope.long, $scope.lang),
+	            zoom: 16,
 	            mapTypeId: google.maps.MapTypeId.ROADMAP,
 	            scrollwheel: true
 	        };
@@ -22,9 +22,9 @@
 	            if (map === void 0) {
 	            	
 	                map = new google.maps.Map(element[0], mapOptions);
-	                setMarker(map, new google.maps.LatLng(51.508515, -0.125487), 'London', 'Just some content');
-	    	        setMarker(map, new google.maps.LatLng(52.370216, 4.895168), 'Amsterdam', 'More content');
-	    	        setMarker(map, new google.maps.LatLng(48.856614, 2.352222), 'Paris', 'Text here');
+	                setMarker(map, new google.maps.LatLng($scope.long, $scope.lang), 'Gainesville Home Cooking', '250 John W Morrow Jr Pkwy Gainesville, GA 30501');
+//	    	        setMarker(map, new google.maps.LatLng(52.370216, 4.895168), 'Amsterdam', 'More content');
+//	    	        setMarker(map, new google.maps.LatLng(48.856614, 2.352222), 'Paris', 'Text here');
 	    	        
 	            }
 	        };
@@ -84,7 +84,7 @@
 	        
 	        initMap();
 	        
-	        if (navigator.geolocation) {
+	        if ($scope.setCurrent && navigator.geolocation) {
 //	    		navigator.geolocation.getCurrentPosition(function(position){
 //	    			$scope.$apply(function(){
 //	    				console.log("position", position.coords.latitude);
@@ -101,10 +101,10 @@
 	    				currentPositionMarker = setMarker(map, mapOptions.center, 'Yong', 'Text here', true);
 //	    				console.log("currentPositionMarker.getPosition()", position);
 	    				
-	    				var center = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-	    			    // using global variable:
-	    			    map.panTo(center);
-	    			    map.setZoom(16);
+//	    				var center = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+//	    			    // using global variable:
+//	    			    map.panTo(center);
+//	    			    map.setZoom(16);
 	    				
 	                    },
 	                    function( error ) {
@@ -132,6 +132,8 @@
 	        scope:
 			{
 				setCurrent: '=',
+				long: '=',
+				lang: '='
 			}
 	    };
 	});
