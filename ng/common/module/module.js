@@ -96,8 +96,12 @@
 	            scope.cachedElementHeight = 0;
 	            cacheElementSize(scope, element);
 	            
+	            function cacheElementSize(scope, element) {
+	            	scope.cachedElementWidth = element.offsetWidth;
+	            	scope.cachedElementHeight = element.offsetHeight;
+	            }
 	            
-	            if (appService.deviceOS != 'iOS') {
+	            if (appService.deviceOS == 'iOS') {
 		            angular.element($window).bind('orientationchange', function () {
 		            	console.log("orientationchange");
 		            	cacheElementSize(scope, element);
@@ -107,10 +111,7 @@
 	            } else {
 	            	$window.addEventListener('resize', onWindowResize);
 	           	 
-		            function cacheElementSize(scope, element) {
-		            	scope.cachedElementWidth = element.offsetWidth;
-		            	scope.cachedElementHeight = element.offsetHeight;
-		            }
+		            
 		 
 		            function onWindowResize() {
 		            	console.log("resize");
