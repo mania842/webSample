@@ -103,6 +103,7 @@
 	            }
 	 
 	            function onWindowResize() {
+	            	console.log("resize");
 	                var isSizeChanged = scope.cachedElementWidth != element.offsetWidth || scope.cachedElementHeight != element.offsetHeight;
 	                
 	                if (isSizeChanged) {
