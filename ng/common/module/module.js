@@ -84,7 +84,7 @@
     	};
     });
 	
-	module.directive('onSizeChanged', function ($window) {
+	module.directive('onSizeChanged', function ($window, appService) {
 	    return {
 	        restrict: 'A',
 	        scope: {
@@ -96,27 +96,33 @@
 	            scope.cachedElementHeight = 0;
 	            cacheElementSize(scope, element);
 	            
-	            angular.element($window).bind('orientationchange', function () {
-	            	console.log("orientationchange");
-	            });
 	            
-	            $window.addEventListener('resize', onWindowResize);
-	 
-	            function cacheElementSize(scope, element) {
-	            	scope.cachedElementWidth = element.offsetWidth;
-	            	scope.cachedElementHeight = element.offsetHeight;
-	            }
-	 
-	            function onWindowResize() {
-	            	console.log("resize");
-	                var isSizeChanged = scope.cachedElementWidth != element.offsetWidth || scope.cachedElementHeight != element.offsetHeight;
-	                
-	                if (isSizeChanged) {
-	                	cacheElementSize(scope, element);
+	            if (appService.deviceOS != 'iOS') {
+		            angular.element($window).bind('orientationchange', function () {
+		            	console.log("orientationchange");
+		            	cacheElementSize(scope, element);
 	                    var expression = scope.onSizeChanged();
 	                    expression();
-	                }
-	            };
+		            });
+	            } else {
+	            	$window.addEventListener('resize', onWindowResize);
+	           	 
+		            function cacheElementSize(scope, element) {
+		            	scope.cachedElementWidth = element.offsetWidth;
+		            	scope.cachedElementHeight = element.offsetHeight;
+		            }
+		 
+		            function onWindowResize() {
+		            	console.log("resize");
+		                var isSizeChanged = scope.cachedElementWidth != element.offsetWidth || scope.cachedElementHeight != element.offsetHeight;
+		                
+		                if (isSizeChanged) {
+		                	cacheElementSize(scope, element);
+		                    var expression = scope.onSizeChanged();
+		                    expression();
+		                }
+		            };
+	            }
 	        }
 	    };
 	});
