@@ -101,6 +101,17 @@
 	            	scope.cachedElementHeight = element.offsetHeight;
 	            }
 	            
+	            function onWindowResize() {
+	            	console.log("resize");
+	                var isSizeChanged = scope.cachedElementWidth != element.offsetWidth || scope.cachedElementHeight != element.offsetHeight;
+	                
+	                if (isSizeChanged) {
+	                	cacheElementSize(scope, element);
+	                    var expression = scope.onSizeChanged();
+	                    expression();
+	                }
+	            };
+	            
 	            if (appService.deviceOS == 'iOS') {
 		            angular.element($window).bind('orientationchange', function () {
 		            	cacheElementSize(scope, element);
@@ -109,19 +120,6 @@
 		            });
 	            } else {
 	            	$window.addEventListener('resize', onWindowResize);
-	           	 
-		            
-		 
-		            function onWindowResize() {
-		            	console.log("resize");
-		                var isSizeChanged = scope.cachedElementWidth != element.offsetWidth || scope.cachedElementHeight != element.offsetHeight;
-		                
-		                if (isSizeChanged) {
-		                	cacheElementSize(scope, element);
-		                    var expression = scope.onSizeChanged();
-		                    expression();
-		                }
-		            };
 	            }
 	        }
 	    };
