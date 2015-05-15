@@ -103,7 +103,6 @@
 	            
 	            if (appService.deviceOS == 'iOS') {
 		            angular.element($window).bind('orientationchange', function () {
-		            	console.log("orientationchange");
 		            	cacheElementSize(scope, element);
 	                    var expression = scope.onSizeChanged();
 	                    expression();
