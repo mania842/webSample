@@ -95,6 +95,11 @@
 	            scope.cachedElementWidth = 0;
 	            scope.cachedElementHeight = 0;
 	            cacheElementSize(scope, element);
+	            
+	            angular.element($window).bind('orientationchange', function () {
+	            	console.log("orientationchange");
+	            });
+	            
 	            $window.addEventListener('resize', onWindowResize);
 	 
 	            function cacheElementSize(scope, element) {
