@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"> -->
 		
 	<!-- <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" /> -->
 	<title ng-bind="title"></title>
@@ -49,12 +49,12 @@
     <![endif]-->
 	
 </head>
-<body ng-class="{iPhone:appService.isIPhone, landscape:$root.admin.appService.isLandscape()}">
+<body ng-class="{iPhone:appService.isIPhone, landscape:$root.admin.appService.isLandscape()}" ng-style="getBackground()" >
 	<!-- App area -->
-	<div class="app-ngview" ng-class="{ios : appService.deviceOS == 'iOS'}" ng-style="{{$root.admin.web.MAIN_BG_STYLE}}" ng:view></div>
+	<div class="app-ngview" ng-class="{ios : appService.deviceOS == 'iOS'}" ng:view></div>
 	
-	<!-- Header -->
-    <ng:include src="'ng/common/html/header.html'"></ng:include>
+	<!-- <!-- Header -->
+    <ng:include src="'ng/common/html/header.html'"></ng:include> -->
     
 	<!-- Footer -->
 	<ng:include src="'ng/common/html/footer.html'"></ng:include>

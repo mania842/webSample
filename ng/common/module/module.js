@@ -6,7 +6,7 @@
 	'use strict';
 
 	// Define our module.
-	var module = angular.module('myApp', [ 'ngRoute', 'ngSanitize', 'buffetModule', 'duScroll' ]);
+	var module = angular.module('myApp', [ 'ngRoute', 'ngSanitize', 'buffetModule', 'duScroll']);
 
 	module.value('duScrollDuration', 500);
 	module.value('duScrollBottomSpy', true);
@@ -117,9 +117,13 @@
 	
 	
 	angular.module('myApp').controller('HomeController', 
-    		function ($scope, $location, appService) {
+    		function ($scope, $location, appService, webId) {
 		$scope.appService = {
 			deviceOS : appService.deviceOS
+		};
+		
+		$scope.getBackground = function() {
+			return webId.web.MAIN_BG_STYLE;
 		};
 	});
 
