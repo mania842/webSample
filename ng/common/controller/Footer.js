@@ -27,8 +27,9 @@
     	
         $scope.buttonClicked = function(item) {
 //        	console.log("item.PATH + $scope.domain", item.PATH + $scope.domain);
-        	$location.path(item.PATH + $scope.domain);
         	console.log("button Clicked: ", item.PATH + $scope.domain);
+        	$location.path(item.PATH + $scope.domain);
+        	
 //            if(section == $scope.sections[0].name){
 ////            	if ($scope.mode.length > 0) {
 ////            		var mode = $scope.mode.pop();
